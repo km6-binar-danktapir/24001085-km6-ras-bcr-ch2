@@ -1,4 +1,4 @@
-# Submission Challenge 2
+# Submission Challenge Chapter 2
 
 ### Nama : Rasyad Jabbar Poncosewoyo
 ### Kelas : FSW-2
