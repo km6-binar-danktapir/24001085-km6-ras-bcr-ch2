@@ -4,7 +4,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-class Binar {
+export default class Binar {
     static populateCars = (cars) => {
         return cars.map((car) => {
             const isPositive = getRandomInt(0, 1) === 1;

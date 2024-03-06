@@ -1,4 +1,7 @@
-class App {
+import Car from "./Car.js";
+import Binar from './Binar.js';
+
+export default class App {
     constructor() {
         this.clearButton = document.getElementById("clear-btn");
         this.loadButton = document.getElementById("load-btn");
