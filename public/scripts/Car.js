@@ -39,6 +39,7 @@ export default class Car extends Component {
 
     static init = (cars) => (this.list = cars.map((car) => new this(car)));
 
+    // render html here
     render() {
         return `
             <p>id: <b>${this.id}</b></p>
