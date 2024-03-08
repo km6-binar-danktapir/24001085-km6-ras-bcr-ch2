@@ -1,10 +1,9 @@
 import Car from "./Car.js";
-
-const carsData = require("../data/cars.min.json");
+import carsData from "../../data/cars.min.json" assert { type: "json" };
 
 function getTimeStamp(date, time) {
-    const dateParts = date.split("-").map(Number);
-    const timeParts = time.split(":").map(Number);
+    const dateParts = date.split("-");
+    const timeParts = time.split(":");
     const timestamp = new Date(
         parseInt(dateParts[0]),
         parseInt(dateParts[1] - 1),
@@ -22,7 +21,7 @@ export default class App {
         throw new Error("Cannot instantiate App object");
     }
 
-    static run() {
+    static initData() {
         /**
          * fetch data from json files
          */
@@ -48,12 +47,12 @@ export default class App {
         const filteredCars = Car.records.filter((car) => {
             if (
                 car.hasOption(driverOption) &&
-                waktuJemputTimestamp >= car.availableAt
+                waktuJemputTimestamp > car.availableAt
             ) {
                 if (passengersCapacity !== "") {
                     const parsedPassengersCapacity =
                         parseInt(passengersCapacity);
-                    return car.capacity >= parsedPassengersCapacity;
+                    return car.capacity > parsedPassengersCapacity;
                 }
                 return true;
             }
