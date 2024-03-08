@@ -1,0 +1,12 @@
+.car-price {
+    font-weight: bold;
+}
+
+.car-description {
+    text-align: justify;
+}
+
+.car-features-items {
+    display: inline;
+    text-align: justify;
+}
