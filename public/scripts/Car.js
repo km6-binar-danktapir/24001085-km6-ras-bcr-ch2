@@ -46,12 +46,58 @@ export default class Car extends Component {
     // render html here
     render() {
         return `
-            <p>id: <b>${this.id}</b></p>
-            <p>plate: <b>${this.plate}</b></p>
-            <p>manufacture: <b>${this.manufacture}</b></p>
-            <p>model: <b>${this.model}</b></p>
-            <p>available at: <b>${this.availableAt}</b></p>
-            <img src="${this.image}" alt="${this.manufacture}" width="64px">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img
+                            class="img-fluid card-img-top card-image"
+                            src="${this.image}"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">
+                                ${this.model} / ${this.type}
+                            </h5>
+                            <p class="car-price">
+                                Rp. ${this.rentPerDay} / hari
+                            </p>
+                            <p class="car-description">${this.description}</p>
+                            <ul class="list-car-features">
+                                <li class="mb-3">
+                                    <img
+                                        class="img-fluid"
+                                        src="../images/fi_users.png"
+                                    />
+                                    <p class="car-features">
+                                        ${this.capacity} orang
+                                    </p>
+                                </li>
+                                <li class="mb-3">
+                                    <img
+                                        class="img-fluid"
+                                        src="../images/fi_settings.png"
+                                    />
+                                    <p class="car-features">
+                                        ${this.transmission}
+                                    </p>
+                                </li>
+                                <li class="mb-3">
+                                    <img
+                                        class="img-fluid"
+                                        src="../images/fi_calendar.png"
+                                    />
+                                    <p class="car-features">
+                                        Tahun ${this.year}
+                                    </p>
+                                </li>
+                            </ul>
+                            <button
+                                type="button"
+                                class="btn btn-outline-success w-100"
+                            >
+                                Pilih Mobil
+                            </button>
+                        </div>
+                    </div>
+                </div>
         `;
     }
 }
