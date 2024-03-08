@@ -110,27 +110,27 @@
         </header>
 
         <!--Cari mobil content-->
-        <section class="container my-5">
+        <section class="container mt-5 mb-3">
             <div class="card">
                 <div class="card-body">
-                    <div class="d-md-flex align-items-end">
+                    <div class="d-md-flex align-items-center">
                         <!--Tipe driver-->
-                        <div class="col-md-3 mx-2">
+                        <div class="col-md-3 px-2">
                             <h5 class="field-header text-wrap">Tipe Driver</h5>
                             <select class="form-select" id="pilih-driver">
                                 <option selected value="default">
                                     Pilih Tipe Driver
                                 </option>
-                                <option value="Dengan Sopir">
+                                <option value="Cruise Control">
                                     Dengan Sopir
                                 </option>
-                                <option value="Tanpa Sopir">
+                                <option value="Keyless Entry">
                                     Tanpa Sopir (Lepas Kunci)
                                 </option>
                             </select>
                         </div>
                         <!--Tanggal ambil-->
-                        <div class="col-md-2 mx-2">
+                        <div class="col-md-2 px-2">
                             <h5 class="field-header text-wrap">Tanggal</h5>
                             <input
                                 id="date-picker"
@@ -140,35 +140,44 @@
                             />
                         </div>
                         <!--Waktu jemput-->
-                        <div class="col-md-2 mx-2">
+                        <div class="col-md-2 px-2">
                             <h5 class="field-header text-wrap">
                                 Waktu Jemput/Ambil
                             </h5>
-                            <select class="form-select" id="pilih-driver">
-                                <option selected value="default">
-                                    Pilih Waktu
-                                </option>
-                                <option value="08:00">08:00 WIB</option>
-                                <option value="09:00">09:00 WIB</option>
-                                <option value="10:00">10:00 WIB</option>
-                                <option value="11:00">11:00 WIB</option>
-                                <option value="12:00">12:00 WIB</option>
-                            </select>
+                            <input
+                                class="form-control"
+                                id="waktu-jemput"
+                                type="time"
+                                placeholder="Pilih Waktu"
+                            />
                         </div>
                         <!--Jumlah penumpang-->
-                        <div class="col-md-3 mx-2">
+                        <div class="col-md-3 px-2">
                             <h5 class="field-header text-truncate">
                                 Jumlah Penumpang (optional)
                             </h5>
-                            <input class="form-control" type="number" min="0" />
+                            <input
+                                class="form-control"
+                                id="jumlah-penumpang"
+                                type="number"
+                                placeholder="Jumlah Penumpang"
+                                min="1"
+                            />
                         </div>
-                        <div class="col-md-2 mx-4">
+                        <div class="col-md-2 mt-auto px-4">
                             <button type="button" class="btn btn-success">
                                 Cari Mobil
                             </button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!--Display cars-->
+        <section class="container mb-5">
+            <div class="card">
+                <div class="card-body"></div>
             </div>
         </section>
 

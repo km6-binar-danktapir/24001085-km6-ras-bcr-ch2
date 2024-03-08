@@ -1,40 +1,64 @@
 import Car from "./Car.js";
-import Binar from './Binar.js';
+
+const carsData = require("../data/cars.min.json");
+
+function getTimeStamp(date, time) {
+    const dateParts = date.split("-").map(Number);
+    const timeParts = time.split(":").map(Number);
+    const timestamp = new Date(
+        parseInt(dateParts[0]),
+        parseInt(dateParts[1] - 1),
+        parseInt(dateParts[2]),
+        parseInt(timeParts[0]),
+        parseInt(timeParts[1])
+    );
+    console.log(timestamp);
+
+    return timestamp;
+}
 
 export default class App {
     constructor() {
-        this.clearButton = document.getElementById("clear-btn");
-        this.loadButton = document.getElementById("load-btn");
-        this.carContainerElement = document.getElementById("cars-container");
+        throw new Error("Cannot instantiate App object");
     }
 
-    async init() {
-        await this.load();
-
-        // Register click listener
-        this.clearButton.onclick = this.clear;
-        this.loadButton.onclick = this.run;
+    static run() {
+        /**
+         * fetch data from json files
+         */
+        Car.init(carsData);
     }
 
-    run = () => {
-        Car.list.forEach((car) => {
-            const node = document.createElement("div");
-            node.innerHTML = car.render();
-            this.carContainerElement.appendChild(node);
+    static filter() {
+        /**
+         * filter berdasarkan input fields
+         */
+        const driverOption = document.getElementById("pilih-driver").value;
+        const selectedDate = document.getElementById("date-picker").value;
+        const selectedWaktuJemput =
+            document.getElementById("waktu-jemput").value;
+        const passengersCapacity =
+            document.getElementById("jumlah-penumpang").value;
+
+        const waktuJemputTimestamp = getTimeStamp(
+            selectedDate,
+            selectedWaktuJemput
+        );
+
+        const filteredCars = Car.records.filter((car) => {
+            if (
+                car.hasOption(driverOption) &&
+                waktuJemputTimestamp >= car.availableAt
+            ) {
+                if (passengersCapacity !== "") {
+                    const parsedPassengersCapacity =
+                        parseInt(passengersCapacity);
+                    return car.capacity >= parsedPassengersCapacity;
+                }
+                return true;
+            }
+            return false;
         });
-    };
-
-    async load() {
-        const cars = await Binar.listCars();
-        Car.init(cars);
+        return filteredCars;
     }
-
-    clear = () => {
-        let child = this.carContainerElement.firstElementChild;
-
-        while (child) {
-            child.remove();
-            child = this.carContainerElement.firstElementChild;
-        }
-    };
 }

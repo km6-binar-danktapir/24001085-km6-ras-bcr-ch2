@@ -32,12 +32,16 @@ export default class Car extends Component {
         this.year = year;
         this.options = options;
         this.specs = specs;
-        this.availableAt = availableAt;
+        this.availableAt = new Date(availableAt);
     }
 
-    static list = [];
+    static records = [];
 
-    static init = (cars) => (this.list = cars.map((car) => new this(car)));
+    static init = (cars) => (this.records = cars.map((car) => new this(car)));
+
+    hasOption(option) {
+        return this.options.find((opt) => opt === option);
+    }
 
     // render html here
     render() {
