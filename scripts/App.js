@@ -1,5 +1,5 @@
 import Car from "./Car.js";
-import carsData from "../../data/cars.min.json" assert { type: "json" };
+import carsData from "../data/cars.min.json" assert { type: "json" };
 
 function getTimeStamp(date, time) {
     const dateParts = date.split("-");
