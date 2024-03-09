@@ -1,11 +1,11 @@
 import App from "./App.js";
 
-const displayedCarsSection = document.getElementById("displayed-cars-section");
-const cariMobilBtn = document.getElementById("cari-mobil-btn");
-
 App.initData();
 
+const cariMobilBtn = document.getElementById("cari-mobil-btn");
+
 cariMobilBtn.addEventListener("click", () => {
+    const displayedCarsSection = document.getElementById("displayed-cars-section");
     const filteredCars = App.filter();
 
     if (filteredCars.length != 0) {
@@ -17,12 +17,7 @@ cariMobilBtn.addEventListener("click", () => {
         filteredCars.forEach((car) => {
             carsContainer.innerHTML += car.render();
         });
-    } else if (displayedCarsSection.innerHTML !== "") {
-        // if search result is empty (no cars found), then do:
-        displayedCarsSection.innerHTML = `<div class="card">
-                    <div class="card-body" id="cars-container"></div>
-                </div>`;
-        const carsContainer = document.getElementById("cars-container");
-        carsContainer.innerHTML = `<h2 style="text-align: center">No cars found</h2>`;
+    } else {
+        displayedCarsSection.innerHTML = "";
     }
 });
