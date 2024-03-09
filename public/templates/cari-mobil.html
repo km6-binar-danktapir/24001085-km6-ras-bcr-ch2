@@ -110,13 +110,17 @@
         </header>
 
         <!--Cari mobil content-->
-        <section class="container mt-5 mb-3">
+        <section class="container mt-3" id="cari-mobil-section">
             <div class="card">
                 <div class="card-body">
-                    <div class="d-md-flex align-items-center">
+                    <div
+                        class="d-md-flex justify-content-evenly align-items-end"
+                    >
                         <!--Tipe driver-->
-                        <div class="col-md-3 px-2">
-                            <h5 class="field-header text-wrap">Tipe Driver</h5>
+                        <div class="col-md-3">
+                            <label class="text-truncate fw-bold"
+                                >Tipe Driver</label
+                            >
                             <select class="form-select" id="pilih-driver">
                                 <option selected value="default">
                                     Pilih Tipe Driver
@@ -130,8 +134,8 @@
                             </select>
                         </div>
                         <!--Tanggal ambil-->
-                        <div class="col-md-2 px-2">
-                            <h5 class="field-header text-wrap">Tanggal</h5>
+                        <div class="col-md-2">
+                            <label class="text-truncate fw-bold">Tanggal</label>
                             <input
                                 id="date-picker"
                                 type="date"
@@ -140,10 +144,10 @@
                             />
                         </div>
                         <!--Waktu jemput-->
-                        <div class="col-md-2 px-2">
-                            <h5 class="field-header text-wrap">
+                        <div class="col-md-2">
+                            <label class="text-truncate fw-bold">
                                 Waktu Jemput/Ambil
-                            </h5>
+                            </label>
                             <input
                                 class="form-control"
                                 id="waktu-jemput"
@@ -152,10 +156,10 @@
                             />
                         </div>
                         <!--Jumlah penumpang-->
-                        <div class="col-md-3 px-2">
-                            <h5 class="field-header text-truncate">
+                        <div class="col-md-3">
+                            <label class="text-truncate fw-bold">
                                 Jumlah Penumpang (optional)
-                            </h5>
+                            </label>
                             <input
                                 class="form-control"
                                 id="jumlah-penumpang"
@@ -164,22 +168,23 @@
                                 min="1"
                             />
                         </div>
-                        <div class="col-md-2 mt-auto px-4">
-                            <button
-                                id="cari-mobil-btn"
-                                type="button"
-                                class="btn btn-success"
-                            >
-                                Cari Mobil
-                            </button>
-                        </div>
+                        <button
+                            id="cari-mobil-btn"
+                            type="button"
+                            class="btn btn-success"
+                        >
+                            Cari Mobil
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!--Display cars-->
-        <section class="container mb-5" id="displayed-cars-section"></section>
+        <section
+            class="container mt-3 mb-5"
+            id="displayed-cars-section"
+        ></section>
 
         <!--Footer content-->
         <footer class="container my-5">
@@ -193,20 +198,20 @@
                 <!--Navigation-->
                 <div class="col-md">
                     <p class="footer-navigation">
-                        <a class="nav-link" href="#our-services"
+                        <a class="nav-link" href="##"
                             >Our services</a
                         >
                     </p>
                     <p class="footer-navigation">
-                        <a class="nav-link" href="#why-us">Why Us</a>
+                        <a class="nav-link" href="##">Why Us</a>
                     </p>
                     <p class="footer-navigation">
-                        <a class="nav-link" href="#testimonials"
+                        <a class="nav-link" href="##"
                             >Testimonials</a
                         >
                     </p>
                     <p class="footer-navigation">
-                        <a class="nav-link" href="#faqs">FAQs</a>
+                        <a class="nav-link" href="##">FAQs</a>
                     </p>
                 </div>
                 <!--Socmed-->

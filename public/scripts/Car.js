@@ -47,9 +47,9 @@ export default class Car extends Component {
     render() {
         return `
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card car-card">
                         <img
-                            class="img-fluid card-img-top card-image"
+                            class="img-fluid card-img-top car-image"
                             src="${this.image}"
                         />
                         <div class="card-body">

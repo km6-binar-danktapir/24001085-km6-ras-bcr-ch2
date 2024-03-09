@@ -11,13 +11,29 @@
     padding-left: 0;
 }
 
-.car-features {
+.list-car-features li p {
     display: inline;
     text-align: justify;
 }
 
 .car-image {
+    height: 250px !important; /*override default given height*/
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    object-fit: fill;
+}
+
+.car-card {
+    height: 100% !important;
+}
+
+.car-card .card-body {
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#cari-mobil-section .card {
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
