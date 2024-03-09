@@ -4,9 +4,11 @@ App.initData();
 
 const cariMobilBtn = document.getElementById("cari-mobil-btn");
 
-cariMobilBtn.addEventListener("click", () => {
+cariMobilBtn.addEventListener("click", (event) => {
     const displayedCarsSection = document.getElementById("displayed-cars-section");
     const filteredCars = App.filter();
+
+    event.preventDefault();
 
     if (filteredCars.length != 0) {
         // if there are cars with corresponding filters, then do:
